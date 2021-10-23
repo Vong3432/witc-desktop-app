@@ -7,6 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Setup rpm
+          command: "sudo apt install -g rpm"
+      - run:
           name: Update NPM
           command: "sudo npm install -g npm"
       - restore_cache:
