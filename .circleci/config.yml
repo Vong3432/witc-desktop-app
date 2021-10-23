@@ -6,9 +6,9 @@ jobs:
       - image: circleci/node:12.13.0
     steps:
       - checkout
-      - run:
-          name: Setup rpm
-          command: "sudo apt install rpm"
+      # - run:
+      #     name: Setup rpm
+      #     command: "sudo apt install rpm"
       - run:
           name: Update NPM
           command: "sudo npm install -g npm"
@@ -18,10 +18,13 @@ jobs:
           name: Install Dependencies
           command: npm install
       - run:
-          name: Install dpkg and fakeroot
-          command: |
-            sudo apt-get update -y
-            sudo apt-get install -y dpkg fakeroot
+          name: Install electron-forge
+          command: npm install --save-dev @electron-forge/cli
+      # - run:
+      #     name: Install dpkg and fakeroot
+      #     command: |
+      #       sudo apt-get update -y
+      #       sudo apt-get install -y dpkg fakeroot
 
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
