@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Setup rpm
-          command: "sudo apt install -g rpm"
+          command: "sudo apt install rpm"
       - run:
           name: Update NPM
           command: "sudo npm install -g npm"
