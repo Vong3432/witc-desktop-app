@@ -2,7 +2,7 @@
   "name": "witc-desktop-app",
   "version": "1.0.0",
   "description": "Desktop app for what-is-the-commands repo.",
-  "main": "build/main.js",
+  "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc && cp src/index.html build/src && cp src/style.css build/src",
